@@ -21,8 +21,18 @@
       // Fungsi untuk memperbarui waktu saat ini
       function updateTime() {
         const now = new Date();
-        const timeString = now.toUTCString();
-        document.getElementById('currentTime').textContent = timeString;
+        const options = { 
+            timeZone: 'Asia/Jakarta', 
+            hour12: false,
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric',
+            hour: '2-digit', 
+            minute: '2-digit', 
+            second: '2-digit'
+        };
+        const timeString = now.toLocaleString('id-ID', options);
+        document.getElementById('currentTime').textContent = timeString + ' WIB';
       }
 
       // Memperbarui waktu setiap 1 detik
