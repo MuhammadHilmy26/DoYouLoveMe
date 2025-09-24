@@ -2,12 +2,34 @@
 <html>
   <head>
     <title>Hello, My World!</title>
-    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: Comic Sans MS;
+      }
+      
+      .love-message {
+        font-size: 24pt;
+      }
+    </style>
   </head>
   <body>
     <h1 class="title">Hello My World! </h1>
     <p>Tepat pada<br><span id="currentTime"></span></p>
-    <p style="font-size: 24pt;">aku merindukanmu</p>
-    <script src="script.js"></script>
+    <p class="love-message">aku merindukanmu</p>
+    
+    <script>
+      // Fungsi untuk memperbarui waktu saat ini
+      function updateTime() {
+        const now = new Date();
+        const timeString = now.toUTCString();
+        document.getElementById('currentTime').textContent = timeString;
+      }
+
+      // Memperbarui waktu setiap 1 detik
+      setInterval(updateTime, 1000);
+
+      // Memanggil fungsi segera agar waktu tampil saat halaman dimuat
+      updateTime();
+    </script>
   </body>
 </html>
